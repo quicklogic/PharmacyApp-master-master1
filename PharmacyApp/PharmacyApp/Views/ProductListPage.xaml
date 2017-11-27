@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PharmacyApp.Views.ProductListPage" Title="Список продуктов:">
+    <StackLayout BackgroundColor="White">
+        
+        <SearchBar Placeholder="Введите название продукта..." TextChanged="SearchBar_OnTextChanged" BackgroundColor="White">
+           
+        </SearchBar>
+        <Button Text="Фильтры" TextColor="White" BackgroundColor="#81C784" BorderRadius="1000" BorderColor="White" />
+        <ListView IsPullToRefreshEnabled="True" x:Name="productsList" ItemsSource="{Binding Products}" BackgroundColor="White"
+              SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="Название препарата:" FontSize="Medium" FontAttributes="Bold" />
+                                <Label Text="{Binding Name}" FontSize="Medium" TextColor="Green" />
+                                <Label Text="Категория:" FontSize="Medium" FontAttributes="Bold"  />
+                                <Label Text="{Binding Category}" FontSize="Medium" TextColor="Green"  />
+                                <Label Text="Наличие:" FontSize="Medium" FontAttributes="Bold"  />
+                                <Label Text="{Binding Availability}" FontSize="Small" TextColor="Green"/>
+                                <Label Text="Цена:" FontSize="Medium" FontAttributes="Bold"  />
+                                <Label Text="{Binding Price}" FontSize="Medium" TextColor="Green"  />
+                               
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout IsVisible="{Binding IsBusy}" BackgroundColor="White"
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="Загрузка данных..." TextColor="Gray" HorizontalOptions="Center" />
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Accent" >
+            </ActivityIndicator>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
+

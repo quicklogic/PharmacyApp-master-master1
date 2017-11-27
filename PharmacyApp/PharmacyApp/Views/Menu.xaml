@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PharmacyApp.Views.MenuPage">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#81C784">
+            <Image Source="icon.png" WidthRequest="150" HeightRequest="150"/>
+            <Button Text="Главная страница" TextColor="#81C784" BackgroundColor="White" BorderRadius="1000"  Command="{Binding GoHomeCommand}" />
+            <Button Text="Профиль" TextColor="#81C784" BackgroundColor="White" BorderRadius="67" Command="{Binding GoUserProfile}" />
+            <Button Text="Заказы" TextColor="#81C784" BackgroundColor="White" BorderRadius="67" Command="{Binding GoUserProfile}" />
+            <Button Text="Информация" TextColor="#81C784" BackgroundColor="White" BorderRadius="67" Command="{Binding GoUserProfile}" />
+            <Button Text="Настройки" TextColor="#81C784" BackgroundColor="White" BorderRadius="67" Command="{Binding GoUserProfile}" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                <Button Text="Войти"  TextColor="#81C784" BackgroundColor="White" BorderRadius="1000"/>
+                <Button Text="Регистрация"  TextColor="#81C784" BackgroundColor="White" BorderRadius="1000"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

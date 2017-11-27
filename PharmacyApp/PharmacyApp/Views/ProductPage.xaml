@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="PharmacyApp.Views.ProductPage" Title="Информация о продукте">
+    <ScrollView>
+        <StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Image Source="icon.png" WidthRequest="400" HeightRequest="400" Aspect="AspectFill"/>
+        </StackLayout>
+        <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand">
+            <Label Text="Имя:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+            <Label Text="{Binding Path=Model.Name}" FontSize="Medium" TextColor="Green" HorizontalOptions="Center"/>
+            <Label Text="Категория:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" />
+            <Label Text="{Binding Path=Model.Category}" FontSize="Medium" TextColor="Green" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Вид:" FontSize="Medium" FontAttributes="Bold"  HorizontalOptions="Center"/>
+            <Label Text="{Binding Path=Model.Type}" FontSize="Medium" TextColor="Green"  HorizontalOptions="Center"/>
+            <Label Text="Цена:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+            <Label Text="{Binding Path=Model.Price}" FontSize="Medium" TextColor="Green" HorizontalOptions="Center"/>
+            <Label Text="Описание:" FontSize="Medium" FontAttributes="Bold"  HorizontalOptions="Center"/>
+            <Label Text="{Binding Path=Model.Description}" FontSize="Medium" TextColor="Green"  HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Назад" Command="{Binding Path=ViewModel.BackCommand}" />
+            <Button Text="В корзину" />
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage> 
+
